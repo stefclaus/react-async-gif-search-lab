@@ -12,13 +12,17 @@ class GifListContainer extends Component {
         this.fetchGifs()
     }
 
+//api key 2nLOP5EZHyriRSzS0brcEdaXSvDEctDQ
+//https://api.giphy.com/v1/gifs/search?q=dolphin&api_key=YOUR API KEY&rating=g
+
+
     // componentDidUpdate() {
 
     //     console.log("Good job your search worked!")
     // }
 
     fetchGifs = (term = "dolphins") => {
-        fetch(`https://api.giphy.com/v1/gifs/search?q=${term}&api_key=dc6zaTOxFJmzC&rating=g&limit=10`)
+        fetch(`https://api.giphy.com/v1/gifs/search?q=${term}&api_key=dc6zaTOxFJmzC&rating=g&limit=3`)
             .then(resp => resp.json())
             .then(data => this.setState({ gifs: data.data }))
     }
